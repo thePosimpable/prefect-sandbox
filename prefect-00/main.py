@@ -2,8 +2,10 @@ import pandas as pd
 import requests
 import os
 from dotenv import load_dotenv
+from pathlib import Path
 
-load_dotenv()
+dotenv_path = Path('../.env')
+load_dotenv(dotenv_path = dotenv_path)
 
 BACKEND_URL = os.getenv('BACKEND_URL')
 API_KEY = os.getenv('API_KEY')
@@ -23,5 +25,4 @@ r = requests.get(url = URL, headers = headers, params = PARAMS)
 data = r.json()
 
 df = pd.DataFrame(data['drs'])
-df.to_csv('test.csv')
 print(df)
