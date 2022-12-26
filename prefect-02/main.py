@@ -12,7 +12,7 @@ load_dotenv(dotenv_path = dotenv_path)
 
 TEMP_FLOW_RUN = datetime.now()
 
-CSV_FILE_NAME = OS.getenv('CSV_FILE_NAME')
+CSV_FILE_NAME = os.getenv('CSV_FILE_NAME')
 
 GCP_PROJECT_NAME = os.getenv('GCP_PROJECT_ID')
 GCS_BUCKET_NAME = os.getenv('GCS_BUCKET')
